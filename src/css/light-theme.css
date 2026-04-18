@@ -1,0 +1,515 @@
+/* ============================================================
+   QUANTUMSHIELD — Light Theme Visual Overrides
+   Activated via [data-theme="light"] on <html>
+   Layered after glass.css in the cascade.
+   ============================================================ */
+
+/* ════════════════════════════════════════════════════════════
+   0. SMOOTH THEME TRANSITION
+   ════════════════════════════════════════════════════════════ */
+
+html {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+*, *::before, *::after {
+  transition-property: background-color, border-color, box-shadow, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
+/* Reset transition on animated elements to avoid interference */
+[data-theme="light"] .orb,
+[data-theme="light"] .aurora-strip::before,
+[data-theme="light"] .aurora-strip::after,
+[data-theme="light"] .wave-divider::before,
+[data-theme="light"] .animate-logs {
+  transition: none !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   1. PAGE BACKGROUND & BODY
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] body {
+  background-color: #F2F6FC;
+  color: #0D1B2A;
+}
+
+/* Light grid overlay — dark thin lines on pale bg */
+[data-theme="light"] #parallax-bg {
+  background-image:
+    linear-gradient(to right,  rgba(13,27,42,0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13,27,42,0.055) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.7;
+}
+
+/* ════════════════════════════════════════════════════════════
+   2. AMBIENT ORBS — pastel, low-opacity for light mode
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .orb-1 {
+  background: radial-gradient(circle, rgba(0,163,181,0.13) 0%, transparent 70%);
+}
+[data-theme="light"] .orb-2 {
+  background: radial-gradient(circle, rgba(123,47,190,0.09) 0%, transparent 70%);
+}
+[data-theme="light"] .orb-3 {
+  background: radial-gradient(circle, rgba(43,71,200,0.10) 0%, transparent 70%);
+}
+[data-theme="light"] .orb-4 {
+  background: radial-gradient(circle, rgba(0,163,181,0.07) 0%, transparent 70%);
+}
+[data-theme="light"] .orb-5 {
+  background: radial-gradient(circle, rgba(123,47,190,0.08) 0%, transparent 70%);
+}
+
+/* ════════════════════════════════════════════════════════════
+   3. AURORA STRIP — softer sky pastel
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .aurora-strip::before {
+  background: conic-gradient(
+    from 200deg at 30% 60%,
+    transparent 0deg,
+    rgba(0,163,181,0.10) 60deg,
+    rgba(43,71,200,0.08) 120deg,
+    transparent 180deg
+  );
+}
+[data-theme="light"] .aurora-strip::after {
+  background: conic-gradient(
+    from 340deg at 70% 40%,
+    transparent 0deg,
+    rgba(123,47,190,0.07) 50deg,
+    rgba(0,163,181,0.06) 110deg,
+    transparent 160deg
+  );
+}
+
+/* ════════════════════════════════════════════════════════════
+   4. NAVIGATION
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .site-header {
+  background: rgba(242, 246, 252, 0.82) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(0,107,120,0.07),
+    0 4px 24px rgba(0,0,0,0.06) !important;
+}
+
+[data-theme="light"] .nav-links a { color: #3D5070; }
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active { color: #006B78; }
+[data-theme="light"] .nav-links a.active { border-bottom-color: #006B78; }
+
+[data-theme="light"] .nav-icon { color: #3D5070; }
+[data-theme="light"] .nav-icon:hover { color: #006B78; }
+
+[data-theme="light"] .nav-hamburger span { background: #3D5070; }
+
+/* Mobile menu */
+[data-theme="light"] #mobile-menu {
+  background: rgba(238, 243, 250, 0.97) !important;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   5. GLASS PANELS (universal upgrade for light)
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .glass-panel {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.90),
+    0 4px 24px rgba(0,0,0,0.08) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   6. FEATURE CARDS
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .feature-card {
+  background: rgba(255, 255, 255, 0.80) !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 2px 12px rgba(0,0,0,0.07) !important;
+}
+[data-theme="light"] .feature-card:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0,107,120,0.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 8px 32px rgba(0,107,120,0.10),
+    0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+[data-theme="light"] .feature-h3 { color: #0D1B2A; }
+[data-theme="light"] .feature-body { color: #3D5070; }
+
+/* ════════════════════════════════════════════════════════════
+   7. STAT CARDS
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .stat-card {
+  background: rgba(255, 255, 255, 0.80) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.90),
+    0 2px 12px rgba(0,0,0,0.06) !important;
+}
+[data-theme="light"] .stat-card:hover {
+  background: rgba(255, 255, 255, 0.98) !important;
+}
+[data-theme="light"] .stat-label { color: #3D5070; }
+
+/* ════════════════════════════════════════════════════════════
+   8. BENTO CARDS
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .bento-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 4px 24px rgba(0,0,0,0.07) !important;
+}
+[data-theme="light"] .bento-card:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0,107,120,0.18) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 12px 40px rgba(0,107,120,0.08),
+    0 4px 16px rgba(0,0,0,0.06) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   9. ALERT FEED (left panel)
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .feed-section {
+  background: #EEF3FA;
+}
+[data-theme="light"] .feed-section::before {
+  background: radial-gradient(ellipse at 30% 50%, rgba(0,107,120,0.05) 0%, transparent 60%);
+}
+
+[data-theme="light"] .alert-item {
+  background: rgba(255,255,255,0.75) !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.90);
+}
+[data-theme="light"] .alert-item:hover {
+  background: rgba(255,255,255,0.95) !important;
+}
+[data-theme="light"] .feed-h2 { color: #0D1B2A; }
+
+/* ════════════════════════════════════════════════════════════
+   10. TERMINAL WINDOW — keep dark (like VS Code in light IDE)
+       Only lighten the wrapper/titlebar chrome
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .terminal-window {
+  background: rgba(10, 12, 18, 0.92) !important;
+  border: 1px solid rgba(0,0,0,0.20) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 4px 32px rgba(0,0,0,0.22) !important;
+}
+[data-theme="light"] .terminal-titlebar {
+  background: rgba(20, 22, 30, 0.96) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   11. STATS SECTION BACKGROUND
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .stats-section {
+  background: #EEF3FA;
+}
+[data-theme="light"] .stats-section::after {
+  background: linear-gradient(
+    135deg,
+    rgba(0,107,120,0.04) 0%,
+    transparent 50%,
+    rgba(43,71,200,0.04) 100%
+  );
+}
+
+/* ════════════════════════════════════════════════════════════
+   12. PRICING CARDS
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .pricing-card {
+  background: rgba(255,255,255,0.85) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 4px 24px rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .pricing-card:not(.featured):hover {
+  background: rgba(255,255,255,0.98) !important;
+}
+[data-theme="light"] .pricing-card.featured {
+  background: rgba(255,255,255,0.95) !important;
+  border: 2px solid rgba(0,107,120,0.50) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(0,163,181,0.18),
+    0 0 40px rgba(0,107,120,0.10),
+    0 8px 32px rgba(0,0,0,0.10) !important;
+}
+
+[data-theme="light"] .pricing-price { color: #0D1B2A; }
+[data-theme="light"] .pricing-price span { color: #8DA0BB; }
+[data-theme="light"] .pricing-feature { color: #3D5070; }
+[data-theme="light"] .pricing-h2 { color: #0D1B2A; }
+[data-theme="light"] .pricing-subtitle { color: #3D5070; }
+
+/* ════════════════════════════════════════════════════════════
+   13. CTA BOX
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .cta-box {
+  background: rgba(255,255,255,0.88) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 8px 48px rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .cta-box:hover {
+  border-color: rgba(0,107,120,0.22) !important;
+}
+[data-theme="light"] .cta-h2 { color: #0D1B2A; }
+[data-theme="light"] .cta-section::before {
+  background: rgba(238,243,250,0.85);
+}
+
+/* ════════════════════════════════════════════════════════════
+   14. CTA EMAIL INPUT
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .email-input {
+  background: #F8FAFD;
+  border-bottom-color: rgba(0,0,0,0.18);
+  color: #0D1B2A;
+}
+[data-theme="light"] .email-input::placeholder { color: #8DA0BB; }
+[data-theme="light"] .email-input:focus {
+  background: #FFFFFF;
+  border-bottom-color: #006B78;
+  box-shadow: inset 0 -2px 0 #006B78;
+}
+
+/* ════════════════════════════════════════════════════════════
+   15. BUTTONS
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .btn-primary {
+  background-image: linear-gradient(
+    135deg,
+    #006B78 0%,
+    #2B47C8 50%,
+    #004E58 100%
+  ) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 12px rgba(0,107,120,0.30);
+}
+[data-theme="light"] .btn-primary:hover {
+  box-shadow: 0 4px 20px rgba(0,107,120,0.40);
+}
+
+[data-theme="light"] .btn-ghost {
+  background: rgba(255,255,255,0.70) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  color: #0D1B2A !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.90);
+}
+[data-theme="light"] .btn-ghost:hover {
+  background: rgba(255,255,255,0.95) !important;
+  border-color: rgba(0,107,120,0.30) !important;
+  color: #006B78 !important;
+}
+
+[data-theme="light"] .btn-outline-cyan {
+  background: rgba(255,255,255,0.80);
+  border-color: rgba(0,107,120,0.30);
+  color: #006B78;
+}
+[data-theme="light"] .btn-outline-cyan:hover {
+  box-shadow: 0 0 15px rgba(0,107,120,0.25);
+  border-color: rgba(0,107,120,0.60);
+}
+
+/* ════════════════════════════════════════════════════════════
+   16. BADGE / CHIP
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .badge-system {
+  background: rgba(255,255,255,0.75) !important;
+  border: 1px solid rgba(0,0,0,0.09) !important;
+  color: #006B78 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 1px 6px rgba(0,0,0,0.06);
+}
+[data-theme="light"] .badge-dot { background: #006B78; }
+
+/* ════════════════════════════════════════════════════════════
+   17. GLOBE (tooltip + ambient)
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .globe-tooltip {
+  background: rgba(255,255,255,0.96) !important;
+  border: 1px solid rgba(0,107,120,0.25) !important;
+  color: #0D1B2A !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 8px 32px rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .globe-ambient {
+  background: radial-gradient(ellipse, rgba(0,107,120,0.07), rgba(43,71,200,0.05) 70%, transparent);
+}
+
+/* ════════════════════════════════════════════════════════════
+   18. WAVE DIVIDERS
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .wave-divider::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0,107,120,0.20) 30%,
+    rgba(43,71,200,0.22) 60%,
+    rgba(123,47,190,0.15) 80%,
+    transparent 100%
+  );
+}
+
+/* ════════════════════════════════════════════════════════════
+   19. FOOTER
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .site-footer {
+  background: #EEF3FA;
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+[data-theme="light"] .footer-links a { color: #8DA0BB; }
+[data-theme="light"] .footer-links a:hover { color: #006B78; }
+
+/* ════════════════════════════════════════════════════════════
+   20. HOVER-CARD shimmer (light version)
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .feature-card::after,
+[data-theme="light"] .bento-card::after,
+[data-theme="light"] .pricing-card::after {
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 0%,
+    rgba(0,107,120,0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* ════════════════════════════════════════════════════════════
+   21. SCROLLBAR — light mode tints
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #EEF3FA;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(141,160,187,0.5);
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,107,120,0.40);
+}
+
+/* ════════════════════════════════════════════════════════════
+   22. HERO headings & text
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .hero-h1 { color: #0D1B2A; }
+[data-theme="light"] .hero-body { color: #3D5070; }
+[data-theme="light"] .hero-h1 .gradient-text {
+  background: linear-gradient(135deg, #006B78 0%, #2B47C8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ════════════════════════════════════════════════════════════
+   23. MISC TEXT TWEAKS
+   ════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .features-h2,
+[data-theme="light"] .capabilities-h2,
+[data-theme="light"] .features-header p { color: #0D1B2A; }
+
+[data-theme="light"] .nav-logo { color: #0D1B2A; }
+
+/* Cloud provider badges inside bento */
+[data-theme="light"] [style*="background:rgba(38,38,38"] {
+  background: rgba(238,243,250,0.8) !important;
+  border-color: rgba(0,0,0,0.10) !important;
+  color: #3D5070 !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   24. THEME TOGGLE BUTTON STYLES
+   ════════════════════════════════════════════════════════════ */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(38,38,38,0.45);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.theme-toggle:hover {
+  background: rgba(58,58,68,0.65);
+  border-color: rgba(161,250,255,0.25);
+  box-shadow: 0 0 12px rgba(161,250,255,0.15);
+  transform: scale(1.06);
+}
+.theme-toggle:active { transform: scale(0.94); }
+
+.theme-toggle .theme-icon {
+  font-size: 1.2rem;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+  color: var(--on-surface-variant);
+}
+
+/* Spin animation on toggle */
+.theme-toggle.spinning .theme-icon {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+/* Light mode adjustments for the button */
+[data-theme="light"] .theme-toggle {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.90), 0 2px 8px rgba(0,0,0,0.07);
+}
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(255,255,255,0.95);
+  border-color: rgba(0,107,120,0.30);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 0 12px rgba(0,107,120,0.12);
+}
+[data-theme="light"] .theme-toggle .theme-icon { color: #3D5070; }

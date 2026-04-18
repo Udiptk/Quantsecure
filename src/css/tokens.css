@@ -1,0 +1,166 @@
+/* ============================================================
+   QUANTUMSHIELD — Design Tokens
+   "The Sovereign Sentinel" Design System
+   ============================================================ */
+
+:root {
+  /* ── Surfaces ── */
+  --surface:                    #0e0e0e;
+  --surface-dim:                #0e0e0e;
+  --surface-bright:             #2c2c2c;
+  --surface-container-lowest:   #000000;
+  --surface-container-low:      #131313;
+  --surface-container:          #1a1919;
+  --surface-container-high:     #201f1f;
+  --surface-container-highest:  #262626;
+  --surface-variant:            #262626;
+  --surface-tint:               #a1faff;
+
+  /* ── Colors ── */
+  --primary:             #a1faff;
+  --primary-container:   #00f4fe;
+  --primary-dim:         #00e5ee;
+  --primary-fixed:       #00f4fe;
+  --primary-fixed-dim:   #00e5ee;
+
+  --secondary:           #c47fff;
+  --secondary-container: #8c00e5;
+  --secondary-dim:       #a533ff;
+  --secondary-fixed:     #e7c5ff;
+  --secondary-fixed-dim: #ddb3ff;
+
+  --tertiary:            #8596ff;
+  --tertiary-container:  #3956fb;
+  --tertiary-dim:        #4963ff;
+  --tertiary-fixed:      #9eabff;
+  --tertiary-fixed-dim:  #8d9cff;
+
+  --error:               #ff716c;
+  --error-container:     #9f0519;
+  --error-dim:           #d7383b;
+
+  /* ── On-colors ── */
+  --on-surface:          #ffffff;
+  --on-surface-variant:  #adaaaa;
+  --on-background:       #ffffff;
+  --on-primary:          #006165;
+  --on-primary-container:#00575b;
+  --on-secondary:        #340059;
+  --on-tertiary:         #001269;
+  --on-error:            #490006;
+
+  /* ── Outlines ── */
+  --outline:             #777575;
+  --outline-variant:     #494847;
+
+  /* ── Brand overrides ── */
+  --brand-cyan:   #00F5FF;
+  --brand-purple: #9D00FF;
+  --brand-blue:   #3D5AFE;
+
+  /* ── Typography ── */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body:     'Inter', sans-serif;
+
+  /* ── Spacing scale (4pt base) ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── Radii ── */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-2xl:  16px;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 700ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ── Shadows / Glows ── */
+  --glow-primary:   0 0 15px rgba(161, 250, 255, 0.3);
+  --glow-primary-lg:0 0 30px rgba(161, 250, 255, 0.5);
+  --glow-hologram:  0 24px 80px rgba(0, 244, 254, 0.08);
+  --glow-threat:    0 0 12px rgba(255, 113, 108, 0.5);
+}
+
+/* ============================================================
+   LIGHT THEME — Token Overrides
+   Applied when <html data-theme="light">
+   ============================================================ */
+
+[data-theme="light"] {
+  /* ── Surfaces ── */
+  --surface:                    #F2F6FC;
+  --surface-dim:                #E4EAF5;
+  --surface-bright:             #FFFFFF;
+  --surface-container-lowest:   #FFFFFF;
+  --surface-container-low:      #EEF3FA;
+  --surface-container:          #E4EBF5;
+  --surface-container-high:     #D8E2F0;
+  --surface-container-highest:  #C8D6E8;
+  --surface-variant:            #DDE6F2;
+  --surface-tint:               #006B78;
+
+  /* ── Colors (deepened for WCAG AA on light bg) ── */
+  --primary:             #006B78;
+  --primary-container:   rgba(0, 107, 120, 0.12);
+  --primary-dim:         #004E58;
+  --primary-fixed:       #00A3B5;
+  --primary-fixed-dim:   #008898;
+
+  --secondary:           #7B2FBE;
+  --secondary-container: rgba(123, 47, 190, 0.10);
+  --secondary-dim:       #5E1E96;
+  --secondary-fixed:     #9B5DD8;
+  --secondary-fixed-dim: #8945C8;
+
+  --tertiary:            #2B47C8;
+  --tertiary-container:  rgba(43, 71, 200, 0.10);
+  --tertiary-dim:        #1A30A8;
+  --tertiary-fixed:      #4F6ADE;
+  --tertiary-fixed-dim:  #3E58D0;
+
+  --error:               #C0392B;
+  --error-container:     rgba(192, 57, 43, 0.10);
+  --error-dim:           #9B1C1C;
+
+  /* ── On-colors ── */
+  --on-surface:          #0D1B2A;
+  --on-surface-variant:  #3D5070;
+  --on-background:       #0D1B2A;
+  --on-primary:          #FFFFFF;
+  --on-primary-container:#003840;
+  --on-secondary:        #FFFFFF;
+  --on-tertiary:         #FFFFFF;
+  --on-error:            #FFFFFF;
+
+  /* ── Outlines ── */
+  --outline:             #8DA0BB;
+  --outline-variant:     rgba(0, 0, 0, 0.12);
+
+  /* ── Brand (same hue, light-appropriate) ── */
+  --brand-cyan:   #00A3B5;
+  --brand-purple: #7B2FBE;
+  --brand-blue:   #2B47C8;
+
+  /* ── Glows (soft elevation shadows for light mode) ── */
+  --glow-primary:    0 0 15px rgba(0, 107, 120, 0.18);
+  --glow-primary-lg: 0 0 30px rgba(0, 107, 120, 0.15);
+  --glow-hologram:   0 2px 0 rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.07);
+  --glow-threat:     0 0 12px rgba(192, 57, 43, 0.22);
+}
+
